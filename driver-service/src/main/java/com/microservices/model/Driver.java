@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="driver", schema="testdb")
+@Table(name="driver", schema="driverdb")
 public class Driver {
 	
 	@Id

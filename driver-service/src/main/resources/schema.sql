@@ -1,5 +1,5 @@
-create schema testdb;
-create table if not exists testdb.driver
+create schema driverdb;
+create table if not exists driverdb.driver
 (
    id integer not null,
    name varchar(100) not null,

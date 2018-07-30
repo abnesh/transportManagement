@@ -1,5 +1,5 @@
-create schema testdb;
-create table testdb.employee
+create schema employeedb;
+create table employeedb.employee
 (
    id integer not null,
    name varchar(100) not null,

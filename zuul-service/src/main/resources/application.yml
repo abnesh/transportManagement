@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: zuul-service 
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost      
+
+    
+server:
+  port: 8080
+  
+zuul:
+#service will be mapped under /api URI
+  prefix: /api
+  routes:
+    driver-service:
+      path: /driver/**
+      url: http://localhost:8085
+    employee-service:
+      path: /employee/**
+      service-id: http://localhost:8081
+    transport-service:
+      path: /transport/**
+      service-id: http://localhost:8082
+  

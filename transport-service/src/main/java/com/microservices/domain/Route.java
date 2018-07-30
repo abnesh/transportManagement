@@ -1,6 +1,7 @@
 package com.microservices.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class Route {
 
 	@Id
+	@GeneratedValue(generator="routeid_generator")
 	private int id;
 	
 	private String start;

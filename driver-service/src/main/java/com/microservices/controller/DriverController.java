@@ -16,7 +16,7 @@ import com.microservices.model.Driver;
 import com.microservices.service.DriverService;
 
 @RestController
-@RequestMapping("/driver")
+@RequestMapping("/")
 public class DriverController {
 
 	@Autowired

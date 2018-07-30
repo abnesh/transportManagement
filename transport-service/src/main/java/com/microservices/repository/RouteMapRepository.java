@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.microservices.domain.RouteMap;
 
 @Repository
-public interface RouteMapRepository extends JpaRepository<RouteMap, String>{
+public interface RouteMapRepository extends JpaRepository<RouteMap, Integer>{
 
 }

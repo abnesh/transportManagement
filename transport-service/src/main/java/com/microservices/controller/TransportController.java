@@ -14,7 +14,7 @@ import com.microservices.domain.Stop;
 import com.microservices.service.TransportService;
 
 @RestController
-@RequestMapping(value= "/transport", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value= "/transport", produces=MediaType.APPLICATION_JSON_VALUE)
 public class TransportController {
 
 	@Autowired
@@ -34,4 +34,5 @@ public class TransportController {
 	public List<RouteMap> findAllRouteMap(){
 		return transportService.findAllRouteMap();
 	}
+	
 }

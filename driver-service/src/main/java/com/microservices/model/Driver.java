@@ -2,7 +2,6 @@ package com.microservices.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +10,7 @@ import javax.persistence.Table;
 public class Driver {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(generator="driverid_generator")
 	private int id;
 	private String name;
 	private String pan;

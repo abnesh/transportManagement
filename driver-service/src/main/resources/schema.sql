@@ -1,5 +1,5 @@
 create schema testdb;
-create table testdb.driver
+create table if not exists testdb.driver
 (
    id integer not null,
    name varchar(100) not null,
@@ -9,3 +9,4 @@ create table testdb.driver
    vehicleid char(12),
    primary key(id)
 );
+

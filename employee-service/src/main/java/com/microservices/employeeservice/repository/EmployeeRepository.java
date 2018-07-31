@@ -8,5 +8,4 @@ import com.microservices.employeeservice.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee,Integer>{
 
-	public Employee findById(int id);
 }

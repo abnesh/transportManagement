@@ -26,3 +26,12 @@ create table transportdb.route_map
 	departure time not null,
 	primary key(id)
 );
+
+create table transportdb.employee_registration
+(
+	id integer not null auto_increment,
+	employeeid integer not null,
+	vehicleid char(12) not null,
+	status char(1) not null,
+	primary key(id) 
+);

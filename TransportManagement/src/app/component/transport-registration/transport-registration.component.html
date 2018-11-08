@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 mat-dialog-title>Register</h2>
+      <mat-dialog-content>
+          <label class="text-secondary">Confirm Registration for route: <strong>{{data.routeid}}</strong></label>
+          <br><label for="employeeid" class="text-primary"><strong>Employee Id:</strong></label> 
+          <br>
+          <input type="text" id="employeeid" name="employeeid" [(ngModel)]="empId"> 
+          <br>
+          <label *ngIf="emp!==undefined && empSearched" class="text-success">
+              Employee confirmed with name: {{emp.name}} and id : {{emp.id}}
+          </label>
+          <label *ngIf="!empSearched" class="text-danger">
+              Employee {{empId}} does not exists!
+          </label>
+          <br>
+      </mat-dialog-content>
+      <hr>
+      <mat-dialog-actions>
+          <button mat-raised-button (click)="onCloseConfirm()" class="btn btn-info">Confirm</button>
+          <button mat-raised-button (click)="onCloseSubmit()" class="btn btn-primary">Submit</button>
+          <button mat-raised-button (click)="onCloseCancel()" class="btn btn-danger">Cancel</button>
+      </mat-dialog-actions>
+    </div>
+</div>
+</div>

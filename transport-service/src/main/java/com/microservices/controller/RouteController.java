@@ -13,24 +13,39 @@ import org.springframework.web.bind.annotation.RestController;
 import com.microservices.domain.Route;
 import com.microservices.service.RouteService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
-@RequestMapping(value="/route",produces=MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value="/v1",produces=MediaType.APPLICATION_JSON_VALUE)
+@Api(value="Routes", description="Operations performed on routes", consumes= "application/json" )
 public class RouteController {
 
 	@Autowired
 	private RouteService routeService;
 	
-	@PostMapping
+	@ApiOperation(value = "Add a new route",
+		    notes = "Route should be provided as a json object",
+		    response = Route.class,
+		    responseContainer = "List")
+	@PostMapping(value="/route")
 	public Route addRoute(@RequestBody Route route) {
 		return routeService.addRoute(route);
 	}
 	
-	@PutMapping
+	@ApiOperation(value = "Updates a new route",
+		    notes = "Route should be provided as a json object",
+		    response = Route.class,
+		    responseContainer = "List")
+	@PutMapping(value="/route")
 	public Route updateRoute(@RequestBody Route route) {
 		return routeService.updateRoute(route);
 	}
 	
-	@DeleteMapping(value="/{id}")
+	@ApiOperation(value = "Delets an existing route",
+		    notes = "Route should be provided as a json object",
+		    responseContainer = "List")
+	@DeleteMapping(value="/route/{id}")
 	public void deleteRoute(@PathVariable int id) {
 		routeService.deleteRoute(id);
 	}

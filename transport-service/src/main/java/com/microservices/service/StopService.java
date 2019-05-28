@@ -30,5 +30,12 @@ public class StopService {
 		if(stopRepository.findById(id).isPresent())
 			stopRepository.deleteById(id);
 	}
+
+	public Stop findStopById(int id) {
+		if (stopRepository.findById(id).isPresent())
+			return stopRepository.findById(id).get();
+		else 
+			return null;
+	}
 	
 }

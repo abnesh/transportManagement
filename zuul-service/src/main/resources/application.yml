@@ -2,6 +2,11 @@ spring:
   application:
     name: zuul-service 
  
+jwt:
+  header: Authorization
+  secret: secret
+  expiration: 604800 
+  
 eureka:
   client:
     service-url:
@@ -17,6 +22,11 @@ zuul:
 #service will be mapped under /api URI
   prefix: /api
   routes:
+    auth-service:
+      path: /auth/**
+      service-id: http://localhost:8888
+      strip-prefix: false
+      sensitive-headers: Cookie,Set-Cookie
     driver-service:
       path: /driver/**
       url: http://localhost:8085
@@ -26,4 +36,7 @@ zuul:
     transport-service:
       path: /transport/**
       service-id: http://localhost:8082
+    vehicle-service:
+      path: /vehicle/**
+      service-id: http://localhost:8084
   

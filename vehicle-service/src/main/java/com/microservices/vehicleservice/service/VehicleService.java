@@ -44,4 +44,8 @@ public class VehicleService {
 		else
 			return vehicleRepositoy.save(vehicle);
 	}
+
+	public Vehicle getByNumber(String number) {
+		return vehicleRepositoy.getByVehicleNumber(number);
+	}
 }

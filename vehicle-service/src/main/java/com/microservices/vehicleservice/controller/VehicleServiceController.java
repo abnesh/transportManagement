@@ -15,35 +15,40 @@ import org.springframework.web.bind.annotation.RestController;
 import com.microservices.vehicleservice.model.Vehicle;
 import com.microservices.vehicleservice.service.VehicleService;
 
-	@RestController
-	@RequestMapping("/")
-	public class VehicleServiceController {
-		
-		@Autowired
-		public VehicleService vehicleService;
-		
-		@GetMapping
-		public List<Vehicle> getAllVehicle(){
-			return vehicleService.getAllVehicle();
-		}
-		
-		@GetMapping("/{id}")
-		public Vehicle getVehicleByID(@PathVariable int id){
-			return vehicleService.getById(id);
-		}
-		
-		@PostMapping
-		public Vehicle addVehicle(@RequestBody Vehicle vehicle){
-			return vehicleService.addVehicle(vehicle);
-		}
-		
-		@PutMapping
-		public Vehicle updateVehicle(Vehicle vehicle){
-			return vehicleService.updateVehicle(vehicle);
-		}
-		
-		@DeleteMapping
-		public void deleteVehicle(Vehicle vehicle){
-			vehicleService.deleteVehicle(vehicle);
-		}
+@RestController
+@RequestMapping("/")
+public class VehicleServiceController {
+
+	@Autowired
+	public VehicleService vehicleService;
+
+	@GetMapping
+	public List<Vehicle> getAllVehicle() {
+		return vehicleService.getAllVehicle();
 	}
+
+	@GetMapping("/{id}")
+	public Vehicle getVehicleById(@PathVariable int id) {
+		return vehicleService.getById(id);
+	}
+	
+	@GetMapping("/number/{number}")
+	public Vehicle getVehicleByNumber(@PathVariable String number) {
+		return vehicleService.getByNumber(number);
+	}
+
+	@PostMapping
+	public Vehicle addVehicle(@RequestBody Vehicle vehicle) {
+		return vehicleService.addVehicle(vehicle);
+	}
+
+	@PutMapping
+	public Vehicle updateVehicle(Vehicle vehicle) {
+		return vehicleService.updateVehicle(vehicle);
+	}
+
+	@DeleteMapping
+	public void deleteVehicle(Vehicle vehicle) {
+		vehicleService.deleteVehicle(vehicle);
+	}
+}

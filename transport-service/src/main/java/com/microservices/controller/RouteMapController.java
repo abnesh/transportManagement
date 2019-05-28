@@ -14,23 +14,23 @@ import com.microservices.domain.RouteMap;
 import com.microservices.service.RouteMapService;
 
 @RestController
-@RequestMapping(value="/routemap",produces=MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value="/v1",produces=MediaType.APPLICATION_JSON_VALUE)
 public class RouteMapController {
 
 	@Autowired
 	private RouteMapService routeMapService;
 	
-	@PostMapping
+	@PostMapping("/routemap")
 	public RouteMap addRouteMap(@RequestBody RouteMap routeMap) {
 		return routeMapService.addRouteMap(routeMap);
 	}
 	
-	@PutMapping
+	@PutMapping("/routemap")
 	public RouteMap updateRouteMap(@RequestBody RouteMap routeMap) {
 		return routeMapService.updateRouteMap(routeMap);
 	}
 	
-	@DeleteMapping(value="/{id}")
+	@DeleteMapping(value="/routemap/{id}")
 	public void deleteRouteMap(@PathVariable int id) {
 		routeMapService.deleteRouteMap(id);
 	}

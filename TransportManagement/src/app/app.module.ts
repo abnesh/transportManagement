@@ -8,13 +8,24 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { TransportMainComponent } from './component/transport-main/transport-main.component';
-import { TransportMainService } from './service/transport-main.service';
-import { TransportSearchResultComponent } from './component/transport-search-result/transport-search-result.component';
-import { TransportRegistrationComponent } from './component/transport-registration/transport-registration.component';
+import { HeaderComponent } from './tms/header/header.component';
+import { FooterComponent } from './tms/footer/footer.component';
+import { TransportMainComponent } from './tms/transport-main/transport-main.component';
+import { TransportMainService } from './shared/services/transport-main.service';
+import { TransportSearchResultComponent } from './tms/transport-search-result/transport-search-result.component';
+import { TransportRegistrationComponent } from './tms/transport-registration/transport-registration.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './tms/home/home.component';
+import { ProfileComponent } from './tms/profile/profile.component';
+import { ErrorPageComponent } from './tms/error-page/error-page.component';
+import { LoginComponent } from './tms/login/login.component';
+import { RegisterComponent } from './tms/register/register.component';
+import { HttpModule } from '@angular/http';
+import { AuthService } from './shared/services/auth.service';
+import { AuthGuard } from './shared/services/auth-guard.service';
+import { RouteRegistrationDetailsComponent } from './tms/route-registration-details/route-registration-details.component';
+import { FaqComponent } from './tms/faq/faq.component';
+import { RouteDriverDetailsComponent } from './tms/route-driver-details/route-driver-details.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +34,21 @@ import { AppRoutingModule } from './/app-routing.module';
     FooterComponent,
     TransportMainComponent,
     TransportSearchResultComponent,
-    TransportRegistrationComponent
+    TransportRegistrationComponent,
+    HomeComponent,
+    ProfileComponent,
+    ErrorPageComponent,
+    LoginComponent,
+    RegisterComponent,
+    RouteRegistrationDetailsComponent,
+    FaqComponent,
+    RouteDriverDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     MatDialogModule,
     MatCardModule,
     MatButtonModule,
@@ -39,7 +59,9 @@ import { AppRoutingModule } from './/app-routing.module';
     TransportRegistrationComponent
   ],
   providers: [
-    TransportMainService
+    TransportMainService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

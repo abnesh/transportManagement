@@ -9,7 +9,7 @@ insert into transportdb.stop values(10001,'EcoSpace','Beside BANG 4');
 insert into transportdb.stop values(10002,'ITPL','ITPL Back Gate');
 insert into transportdb.stop values(10003,'Whitefield','Beside Forum Mall');
 insert into transportdb.stop values(10004,'Kormangala','Beside Forum Mall PVR');
-insert into transportdb.stop values(10005,'IndiraNagar','Near Lella Palace');
+insert into transportdb.stop values(10005,'IndiraNagar','Near Leela Palace');
 insert into transportdb.stop values(10006,'Electronic city','Near Infosys front gate');
 
 
@@ -19,3 +19,7 @@ insert into transportdb.route_map values(3,1001,10004,'KA03-MA-6754','18:32:00',
 insert into transportdb.route_map values(4,1001,10006,'KA06-JZ-3209','18:45:00','19:35:00');
 insert into transportdb.route_map values(5,1001,10006,'KA03-MA-6754','19:35:00','20:00:00');
 insert into transportdb.route_map values(6,1001,10007,'KA03-MA-6754','20:00:00','21:00:00');
+
+
+insert into transportdb.employee_registration values(1,11111111,'KA03-MA-6754','Y');
+insert into transportdb.employee_registration values(2,11111112,'KA03-MA-6754','Y');

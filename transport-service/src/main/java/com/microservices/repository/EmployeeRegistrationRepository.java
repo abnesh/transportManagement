@@ -8,4 +8,6 @@ import com.microservices.domain.EmployeeRegistration;
 @Repository
 public interface EmployeeRegistrationRepository extends JpaRepository<EmployeeRegistration,Integer> {
 
+	EmployeeRegistration findByEmployeeid(int employeeid);
+
 }

@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.microservices.vehicleservice.model.Vehicle;
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer>{
+
+	Vehicle getByVehicleNumber(String number);
 	
 	
 

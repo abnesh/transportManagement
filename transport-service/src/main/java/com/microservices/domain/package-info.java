@@ -58,7 +58,7 @@
 			),
 			@org.hibernate.annotations.Parameter(
 				name = "initial_value",
-				value= "7"
+				value= "3"
 			)
 })
 package com.microservices.domain;

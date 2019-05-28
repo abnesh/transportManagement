@@ -1,21 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <app-header></app-header>
+<div class="wrapper">
+  <div class="container-fluid header">
+    <div class="row">
+      <div class="col-md-12">
+        <app-header></app-header>
+      </div>
     </div>
   </div>
-</div>
-<div class="container-fluid">
-<div class="row">
-    <div class="col-md-12">
-      <app-transport-main></app-transport-main>
+
+  <div class="container-fluid content">
+    <div class="row">
+      <div class="col-md-12">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <app-footer></app-footer>
+
+  <div class="container-fluid footer">
+    <div class="row">
+      <div class="col-md-12">
+        <app-footer></app-footer>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: auth-service
+  # Enabling H2 Console
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:usersdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+#      fail-fast: true 
+#      password: user
+#      username: user
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/          
+
+jwt:
+  header: Authorization
+  secret: secret
+  expiration: 604800 
+
+server:
+  port: 8888

@@ -1,0 +1,10 @@
+.from-location{
+    text-align: center;
+}
+
+/* Media query to manage text-alignment for small devices*/
+@media screen and (min-width: 480px){
+    from-location{
+        text-align: right!important;
+    }
+}

@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 offset-sm-0 offset-md-3 text-center">
+      <div class="alert alert-success" *ngIf="serverMessage && serverMessage.message" role="alert">
+          {{serverMessage.message}}
+      </div>
+      <br>
+      <h2 class="text-center">Register</h2>
+      <br>
+    </div>
+    <div class="col-sm-12 col-md-6 offset-sm-0 offset-md-3 text-center">
+      <form (ngSubmit)="onRegister(registrationForm)" #registrationForm="ngForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="First Name" 
+            name="firstName"
+            ngModel
+            required>
+          </div>
+          <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="Last Name" 
+              name="lastName"
+              ngModel
+              required>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <input type="email" class="form-control" placeholder="Email" 
+                name="email"
+                ngModel
+                required
+                email>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="password" class="form-control" placeholder="Password" 
+              name="password"
+              ngModel
+              required>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="password" class="form-control" placeholder="Retype Password" required>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div>
+                <label class="form-check-inline"> &nbsp; Gender: </label>  
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" id="genderMale" class="form-check-input" name="Gender" value="Male">
+              <label for="genderMale" class="form-check-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" id="genderFemale" class="form-check-input" name="Gender" value="Female">
+                <label for="genderFemale" class="form-check-label">Female</label>
+            </div>
+        </div>
+        <button class="btn btn-md btn-dark btn-block" type="submit" [disabled]="!f.valid">Register</button>
+      </form>
+    </div>
+  </div>
+
+</div>

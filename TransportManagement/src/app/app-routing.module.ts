@@ -11,7 +11,7 @@ import { TransportMainComponent } from './tms/transport-main/transport-main.comp
 
 const appRoutes:Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
-  {path:'home', component:HomeComponent},
+  {path:'home', component:HomeComponent, canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'profile',component:ProfileComponent},
